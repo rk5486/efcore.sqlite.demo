@@ -11,13 +11,7 @@ public class Repository<T> : IRepository<T> where T : class
 {
     private readonly DbSet<T> _set;
 
-    public Repository(DbContext dbContext)
-    {
-        _set = dbContext.Set<T>();
-    }
+    public Repository(DbContext dbContext) => _set = dbContext.Set<T>();
     
-    public void AddRange(IEnumerable<T> data)
-    {
-        _set.AddRange(data);
-    }
+    public void AddRange(IEnumerable<T> data) => _set.AddRange(data);
 }
